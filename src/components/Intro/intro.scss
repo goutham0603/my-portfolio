@@ -1,0 +1,126 @@
+#intro {
+  height: calc(100vh - 4rem);
+  width: 100vw;
+  max-width: 75rem;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+
+  .bg {
+    position: absolute;
+    top: -4rem;
+    right: 0;
+    left: auto;
+    z-index: -1;
+    object-fit: cover;
+    height: 100vh;
+  }
+
+  .introContent {
+    height: 100%;
+    padding: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Align to the left */
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  .hello {
+    font-size: 1.5rem;
+    font-weight: 100;
+    margin-bottom: 1rem;
+  }
+
+  .introName {
+    color: yellow;
+  }
+
+  .introText {
+    text-align: left; /* Align text to the left */
+    margin-bottom: 2rem;
+    max-width: 40rem; /* Set a maximum width */
+  }
+
+  .introPara {
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-align: left; /* Align text to the left */
+    max-width: 40rem; /* Set a maximum width */
+    margin-bottom: 2rem; /* Add margin bottom for spacing */
+    line-height: 1.6; /* Set line height for better readability */
+    color: white; /* Set text color */
+    opacity: 0.9; /* Adjust opacity for a subtle effect */
+    transition: opacity 0.3s ease; /* Add transition for smooth opacity change */
+  }
+
+  .introPara:hover {
+    opacity: 1; /* Change opacity on hover */
+  }
+
+  .btn {
+    background: #ff7a59;
+    color: white;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: 1.2rem;
+  }
+
+  .btn:hover {
+    background: #ff4d26;
+  }
+
+  .resume {
+    margin-right: 1rem;
+    height: 1.5rem;
+  }
+
+  @media screen and (max-width: 840px) {
+    .bg {
+      right: -10vw;
+    }
+    .introContent {
+      font-size: 5vw;
+    }
+    .hello {
+      font-size: 3vw;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .bg {
+      right: -20vw;
+    }
+    .introContent {
+      padding: 1rem;
+    }
+  }
+
+  @keyframes slideBackground {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

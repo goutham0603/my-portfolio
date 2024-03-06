@@ -1,0 +1,62 @@
+$primary-color: #2c3e50;
+$secondary-color: #ecf0f1;
+$accent-color: #3498db;
+$hover-color: #2980b9;
+
+// Styles
+#works {
+  margin: 0 auto;
+  padding: 50px 0;
+  background-color: transparent;
+  color: $secondary-color;
+  text-align: center;
+}
+
+.worksTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: $accent-color;
+}
+
+.workExperience {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.job {
+  background-color: $secondary-color;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 30px;
+  width: 300px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .jobTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  .jobDuration {
+    font-size: 1rem;
+    color: $accent-color;
+  }
+
+  .jobResponsibilities {
+    margin-top: 20px;
+    text-align: left;
+
+    li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      color: $primary-color;
+    }
+  }
+}

@@ -1,0 +1,121 @@
+// Variables for colors
+$primary-color: rgb(30, 30, 30);
+$secondary-color: yellow;
+
+// Main navbar styles
+.navbar {
+  background: $primary-color;
+  height: 5rem;
+  width: 100vw;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+
+  .logo {
+    height: 3rem;
+    width: auto; // Let the width adjust according to the height
+  }
+
+  .desktopMenu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; // Align items to the left
+    flex-grow: 1; // Allow the desktop menu to take up remaining space
+  }
+
+  .desktopMenuListItem {
+    margin: 0 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid transparent; // Initially transparent
+    transition: all 0.3s ease;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover,
+    &.active {
+      color: $secondary-color;
+      border-color: $secondary-color; // Change border color on hover/active
+    }
+  }
+
+  .desktopMenuBtn {
+    margin-left: auto; // Push the button to the right
+    background: $secondary-color;
+    color: $primary-color;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.5rem;
+    border-radius: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+
+    .desktopMenuImg {
+      height: 1.5rem;
+      width: auto;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .mobMenu {
+    display: none;
+    height: 2rem;
+    width: auto;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(110%);
+    }
+  }
+
+  .navMenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: $primary-color;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-height: 0;
+    cursor: pointer;
+    transition: max-height 0.3s ease;
+
+    &.active {
+      max-height: 20rem; // Adjust as needed
+    }
+
+    .listItem {
+      padding: 1rem 2rem;
+      color: white;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: darken($primary-color, 10%);
+      }
+
+      &.active {
+        background: #24a9b6;
+      }
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    .desktopMenu {
+      display: none;
+    }
+
+    .mobMenu {
+      display: block;
+    }
+  }
+}
